@@ -1,4 +1,5 @@
-## Functions to find the inverse of a square matrix
+## Gabriela 2assignment 
+##Functions to find the inverse of a square matrix
 
 ## This function is like a squeleton that returns a list of functions that
 ## once we run the cacheSolve function this list will have the result of the inverse
