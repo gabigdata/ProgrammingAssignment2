@@ -1,7 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Functions to find the inverse of a square matrix
 
-## Write a short comment describing this function
+## This function is like a squeleton that returns a list of functions that
+## once we run the cacheSolve function this list will have the result of the inverse
+## of our matrix
 
 makeCacheMatrix <- function(x = matrix()) {
     inverse <- NULL
@@ -12,21 +13,22 @@ makeCacheMatrix <- function(x = matrix()) {
     get <- function() x
     setinverse <- function(z) inverse <<- z
     getinverse <- function() inverse
-    list(set=set,get=get,getinverse=getinverse)
+    list(set=set,get=get,setinverse=setinverse,getinverse=getinverse)
 }
 
 
-## Write a short comment describing this function
+## This function recieves the list of functions from the previously function
+## This function solves the inverse of the matrix previously saved in the previously function
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+    ## Return a matrix that is the inverse of 'x'
     inverse <- x$getinverse()
     if (!is.null(inverse)) {
         message("getting cache inverse")
         return(inverse)        
     }
     data <- x$get()
-    inverse <- solve(data, ...)
+    inverse <- solve(data,...)
     x$setinverse(inverse)
     inverse
 }
